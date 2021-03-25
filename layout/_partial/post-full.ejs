@@ -1,0 +1,22 @@
+<% if(item.cover_image) { %>
+  <div class="row">
+    <div class="col-12">
+          <img class="img-fluid cover-image" src="<%- config.root %><%- item.cover_image %>" alt="<%- item.title || "Untitled" %>">
+    </div>
+  </div>
+<% } %>
+<div class="row">
+  <div class="col-12 col-lg-8 offset-lg-2 mt-4">
+
+    <div class="post-page text-center my-4">
+      <h1><%- item.title || "Untitled" %></h1>
+      <hr>
+      <span class="date"><%= item.date.format(config.date_format) %></span>
+    </div>
+
+    <%- item.content %>
+
+    <%- partial("_partial/comments.ejs") %>
+
+  </div>
+</div>
